@@ -12,7 +12,8 @@
 
 <body>
 
-    <h1 id="naslov" class="text-primary text-center">Kućni ljubimci i njihovi vlasnici</h1>
+    <h1 id="naslov" class=" text-center">Kućni ljubimci i njihovi vlasnici</h1>
+    <a href="dodajNovog.php"><button type="button" class="btn btn-primary" id="btn_novi_ljubimac">Forma za novog ljubimca</button></a>
 
     <div id="div-tbl-pocetna">
         <table class="table table-light table-striped table-hover table-bordered">
