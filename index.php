@@ -11,10 +11,8 @@
 </head>
 
 <body>
-
     <h1 id="naslov" class=" text-center">Kućni ljubimci i njihovi vlasnici</h1>
     <a href="dodajNovog.php"><button type="button" class="btn btn-primary" id="btn_novi_ljubimac">Forma za novog ljubimca</button></a>
-
     <div id="div-tbl-pocetna">
         <table class="table table-light table-striped table-hover table-bordered">
             <thead class="text-center">
@@ -30,14 +28,14 @@
                     <th id="izmena-brisanje">Izmeni / Obriši</th>
                 </tr>
             </thead>
-            <tbody class="text-center">
+            <tbody id="content" class="text-center">
 
                 <?php
                 include 'db.php';
 
                 $db = new DB();
                 $upit = "select ljub.id, ljub.tip, ljub.ime, ljub.rasa, ljub.ime, ljub.godine, ljub.boja, vl.ime, vl.prezime 
-                from ljubimac ljub join vlasnik vl on ljub.vlasnik_id = vl.id";
+                    from ljubimac ljub join vlasnik vl on ljub.vlasnik_id = vl.id order by ljub.id asc";
                 $result_set = $db->connection->query($upit);
 
                 while ($ljubimac = mysqli_fetch_array($result_set)) :
@@ -53,14 +51,13 @@
                         <td><?php echo $ljubimac['prezime'] ?></td>
                         <td>
                             <button class="btn btn-info">Izmeni</button>
-                            <button class="btn btn-danger">Obriši</button>
+                            <button class="btn btn-danger" value="<?php echo $ljubimac['id']; ?>" id="obrisi_dugme">Obriši</button>
                         </td>
                     </tr>
 
                 <?php
                 endwhile;
                 ?>
-
             </tbody>
 
             <tfoot>
@@ -69,6 +66,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

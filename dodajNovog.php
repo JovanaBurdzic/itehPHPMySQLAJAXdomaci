@@ -12,6 +12,8 @@
 
 <body>
 
+    <a href="index.php"><button class="btn btn-primary" id="pocetna-btn">Početna</button></a>
+
     <form method="POST" id="forma-novi-ljubimac">
         <div class="mb-3">
             <label class="form-label">Tip ljubimca: </label>
