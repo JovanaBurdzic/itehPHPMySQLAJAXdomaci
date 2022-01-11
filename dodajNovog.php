@@ -48,7 +48,7 @@
 
                 while ($vlasnik = mysqli_fetch_array($result_set)) :
                 ?>
-                    <option value="<?php echo $vlasnik['id'] ?>"><?php echo $vlasnik['ime'] . " " . $vlasnik['prezime']; ?></option>
+                    <option value="<?php echo $vlasnik['id'] ?>"><?php echo $vlasnik['imev'] . " " . $vlasnik['prezime']; ?></option>
                 <?php
                 endwhile;
                 ?>
